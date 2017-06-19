@@ -435,15 +435,15 @@ function tdcli_update_callback(data)
 					local text = [[
 <i>🖥  وضعیت و آمار </i>
            ربات من 📈📉
-<code>👤 چت های شخصی  : </code>
+<code>🤔👤 چت های شخصی  : </code>
 <b>]] .. tostring(usrs) .. [[</b>
-<code>👥 گروههای معمولی : </code>
+<code>🎎 گروههای معمولی : </code>
 <b>]] .. tostring(gps) .. [[</b>
-<code>🌐 سوپر گروه ها : </code>
+<code>👭👬 سوپر گروه ها : </code>
 <b>]] .. tostring(sgps) .. [[</b>
-<code>📖 شماره های دخیره شده : </code>
+<code>📚 شماره های دخیره شده : </code>
 <b>]] .. tostring(contacts)..[[</b>
-<code>📂 لینک های ذخیره شده : </code>
+<code>💾⛓ لینک های ذخیره شده : </code>
 <b>]] .. tostring(links)..[[</b>
 ]]
 					return send(msg.chat_id_, 0, text)
