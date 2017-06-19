@@ -410,7 +410,7 @@ function tdcli_update_callback(data)
 					local ss = redis:get("botBOT-IDmaxlink") and redis:ttl("botBOT-IDmaxlink") or 0
 					local msgadd = redis:get("botBOT-IDaddmsg") and "☑️" or "❎"
 					local numadd = redis:get("botBOT-IDaddcontact") and "✅" or "❎"
-					local txtadd = redis:get("botBOT-IDaddmsgtext") or  "اد‌دی گلم خصوصی پیام بده"
+					local txtadd = redis:get("botBOT-IDaddmsgtext") or  "📞 شماره تون  ذخیره شد 📲"
 					local autoanswer = redis:get("botBOT-IDautoanswer") and "✅" or "❎"
 					local wlinks = redis:scard("botBOT-IDwaitelinks")
 					local glinks = redis:scard("botBOT-IDgoodlinks")
@@ -433,8 +433,8 @@ function tdcli_update_callback(data)
 					end, nil)
 					local contacts = redis:get("botBOT-IDcontacts")
 					local text = [[
-<i>📈 وضعیت و آمار 📊</i>
-          ربات من
+<i>🖥  وضعیت و آمار </i>
+           ربات من 📈📉
 <code>👤 چت های شخصی  : </code>
 <b>]] .. tostring(usrs) .. [[</b>
 <code>👥 گروههای معمولی : </code>
@@ -668,7 +668,7 @@ function tdcli_update_callback(data)
 				end
 			end
 			if redis:get("botBOT-IDaddmsg") then
-				local answer = redis:get("botBOT-IDaddmsgtext") or "شماره ات  ذخیره شد"
+				local answer = redis:get("botBOT-IDaddmsgtext") or "📞 شماره تون  ذخیره شد 📲"
 				send(msg.chat_id_, msg.id_, answer)
 			end
 		elseif msg.content_.ID == "MessageChatDeleteMember" and msg.content_.id_ == bot_id then
