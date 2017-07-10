@@ -443,7 +443,7 @@ function tdcli_update_callback(data)
 <b>]] .. tostring(sgps) .. [[</b>
 <code>📚 شماره های دخیره شده : </code>
 <b>]] .. tostring(contacts)..[[</b>
-<code>💾⛓ لینک های ذخیره شده : </code>
+<code>⛓💾 لینک های ذخیره شده : </code>
 <b>]] .. tostring(links)..[[</b>
 ]]
 					return send(msg.chat_id_, 0, text)
@@ -555,7 +555,7 @@ function tdcli_update_callback(data)
 					}, dl_cb, nil)
 					return rem(matches)
 				elseif text:match("^(افزودن به همه) (%d+)$") then
-					local matches = text:match("%d+")
+					local matches = text:match("(addgp) (%d+), (%d+), (%d+), (%d+)")
 					local list = {redis:smembers("botBOT-IDgroups"),redis:smembers("botBOT-IDsupergroups")}
 					for a, b in pairs(list) do
 						for i, v in pairs(b) do 
