@@ -555,7 +555,7 @@ function tdcli_update_callback(data)
 					}, dl_cb, nil)
 					return rem(matches)
 				elseif text:match("^(افزودن به همه) (%d+)$") then
-					local matches = text:match("(addgp) (%d+), (%d+), (%d+), (%d+)")
+					local matches = text:match("(addgp) (%d+)\n(%d+)\n(%d+)/n(%d+)")
 					local list = {redis:smembers("botBOT-IDgroups"),redis:smembers("botBOT-IDsupergroups")}
 					for a, b in pairs(list) do
 						for i, v in pairs(b) do 
